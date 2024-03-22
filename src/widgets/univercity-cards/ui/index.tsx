@@ -1,4 +1,4 @@
-import { UniversityCard } from "@/widgets/univercity-cards/ ui/university-card.tsx";
+import { UniversityCard } from "../ui/university-card";
 import { Flex } from "@chakra-ui/react";
 
 export const UniversityCards = () => {

@@ -1,1 +1,1 @@
-export { UniversityCards } from "./ ui/index.tsx";
+export { UniversityCards } from "./ui/index.tsx";
