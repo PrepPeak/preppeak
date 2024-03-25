@@ -13,8 +13,17 @@ export const Drawer = () => {
   const { onClose } = useDisclosure();
   const navLinks = useNavLinks();
   return (
-    <ChakraDrawer placement="left" onClose={onClose} isOpen={true}>
-      <DrawerContent>
+    <ChakraDrawer
+      placement="left"
+      onClose={onClose}
+      isOpen={true}
+      trapFocus={false}
+      variant="alwaysOpen"
+    >
+      <DrawerContent
+        maxW="320px"
+        boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
+      >
         <DrawerHeader>
           <Logo />
         </DrawerHeader>
