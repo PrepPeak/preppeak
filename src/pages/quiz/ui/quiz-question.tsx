@@ -1,5 +1,5 @@
 import { QuizQuestionType } from "@/pages/quiz/ui/types.ts";
-import { Box, Flex, Radio, RadioGroup, Text } from "@chakra-ui/react";
+import { Box, Radio, RadioGroup, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 type Props = QuizQuestionType & {
