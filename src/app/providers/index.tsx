@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Router } from "@remix-run/router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "@/app/theme";
+import { Suspense } from "react";
 
 type Props = {
   router: Router;
@@ -13,10 +14,9 @@ export const Providers = ({ router, client }: Props) => {
   return (
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={client}>
-        <RouterProvider
-          router={router}
-          fallbackElement={<div>Loading...</div>}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <RouterProvider router={router} />
+        </Suspense>
       </QueryClientProvider>
     </ChakraProvider>
   );
