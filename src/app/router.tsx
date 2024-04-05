@@ -11,12 +11,12 @@ const SubjectChoicePagePage = lazy(
 const SubjectQuizPage = lazy(() => import("@/pages/subject-quiz/ui"));
 
 export const router = createBrowserRouter([
+  { path: "/sign-in", element: <SignInPage /> },
   {
     path: "/",
     element: <AppLayout />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/sign-in", element: <SignInPage /> },
       {
         path: "/quiz",
         element: <QuizPage />,
