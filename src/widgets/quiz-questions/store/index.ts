@@ -3,7 +3,7 @@ import { getQuestions } from "@/widgets/quiz-questions/api";
 
 export const useQuestions = (subjectId: string) => {
   const { data, isError, error, isLoading } = useQuery(
-    "questions",
+    ["questions", subjectId],
     () => getQuestions(subjectId).then((res) => res.data),
     {
       enabled: !!subjectId,

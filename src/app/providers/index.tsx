@@ -4,6 +4,7 @@ import { Router } from "@remix-run/router";
 import { theme } from "@/app/theme";
 import { Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { MathJaxContext } from "better-react-mathjax";
 
 type Props = {
   router: Router;
@@ -15,7 +16,9 @@ export const Providers = ({ router, client }: Props) => {
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={client}>
         <Suspense fallback={<div>Loading...</div>}>
-          <RouterProvider router={router} />
+          <MathJaxContext>
+            <RouterProvider router={router} />
+          </MathJaxContext>
         </Suspense>
       </QueryClientProvider>
     </ChakraProvider>
