@@ -25,8 +25,12 @@ export const SignInForm = () => {
   } = methods;
 
   const onSubmit = (data: any) => {
-    console.log(data);
-    mutate(data);
+    mutate(data, {
+      onSuccess: (data) => {
+        localStorage.setItem("token", data.data.access_token);
+        navigate("/");
+      },
+    });
   };
 
   return (
@@ -73,7 +77,7 @@ export const SignInForm = () => {
               color="blue.500"
               fontWeight="bold"
               cursor="pointer"
-              onClick={() => navigate("/registration")}
+              onClick={() => navigate("/register")}
             >
               Регистрация
             </Text>

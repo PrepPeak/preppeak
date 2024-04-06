@@ -1,7 +1,7 @@
 import { request } from "@/shared";
 
-export const login = (data: any) => {
-  const url = "/auth/login/";
+export const register = (data: any) => {
+  const url = "/auth/register/";
 
   return request.post(url, data);
 };

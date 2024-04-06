@@ -11,10 +11,12 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useRegister } from "@/features/registration-form/store";
 
 export const RegistrationForm = () => {
   const methods = useForm();
   const navigate = useNavigate();
+  const { mutate } = useRegister();
 
   const {
     handleSubmit,
@@ -23,7 +25,9 @@ export const RegistrationForm = () => {
   } = methods;
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    mutate(data, {
+      onSuccess: () => navigate("/sign-in"),
+    });
   };
 
   return (
@@ -61,7 +65,7 @@ export const RegistrationForm = () => {
               />
             </FormControl>
             <Button w="100%" colorScheme="blue" type="submit">
-              Войти
+              Зарегестрироваться
             </Button>
             <Text
               w="100%"
@@ -70,9 +74,9 @@ export const RegistrationForm = () => {
               color="blue.500"
               fontWeight="bold"
               cursor="pointer"
-              onClick={() => navigate("/registration")}
+              onClick={() => navigate("/sign-in")}
             >
-              Регистрация
+              Автооризация
             </Text>
           </Stack>
         </form>

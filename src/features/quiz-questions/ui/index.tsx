@@ -1,8 +1,9 @@
 import { Box, Radio, RadioGroup, Text } from "@chakra-ui/react";
+import { AnswerType } from "@/widgets/quiz-questions/models";
 
 type Props = {
   questionTitle: string;
-  answers: string[];
+  answers: AnswerType[];
 };
 
 export const QuizQuestion = (props: Props) => {
@@ -14,8 +15,8 @@ export const QuizQuestion = (props: Props) => {
       </Text>
       <RadioGroup display="flex" flexDir="column" gap="12px" mt="12px">
         {answers.map((answer) => (
-          <Radio value={answer} key={answer}>
-            {answer}
+          <Radio value={answer.text} key={answer.id}>
+            {answer.text}
           </Radio>
         ))}
       </RadioGroup>
