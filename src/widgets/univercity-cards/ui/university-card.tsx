@@ -1,10 +1,16 @@
 import { UniversityCardLayout } from "@/entities";
-import { AddFavouriteButton } from "@/features";
+import { UniversityCard as UniversityCardType } from "@/widgets/univercity-cards/models";
 
-export const UniversityCard = () => {
+type Props = {
+  university: UniversityCardType;
+};
+export const UniversityCard = ({ university }: Props) => {
+  const { name, logo, numberOfSpecialities } = university;
   return (
-    <UniversityCardLayout>
-      <AddFavouriteButton />
-    </UniversityCardLayout>
+    <UniversityCardLayout
+      name={name}
+      logo={logo}
+      numberOfSpecialities={numberOfSpecialities}
+    />
   );
 };

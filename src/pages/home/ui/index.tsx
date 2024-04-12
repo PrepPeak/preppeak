@@ -4,7 +4,7 @@ import { PageTitle } from "@/shared";
 export const HomePage = () => {
   return (
     <>
-      <PageTitle>Шансы поступления</PageTitle>
+      <PageTitle>Список Университетов</PageTitle>
       <UniversityCards />
     </>
   );
