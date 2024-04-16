@@ -27,9 +27,15 @@ export const Dashboards = () => {
               h="60px"
               borderRadius="12px"
               bgColor={
-                report?.streakWeekDay >= day.id ? "green.500" : "gray.100"
+                report?.streakWeekDay && report?.streakWeekDay >= day.id
+                  ? "green.500"
+                  : "gray.100"
               }
-              color={report?.streakWeekDay >= day.id ? "gray.100" : "gray.900"}
+              color={
+                report?.streakWeekDay && report?.streakWeekDay >= day.id
+                  ? "gray.100"
+                  : "gray.900"
+              }
             >
               <Text textStyle="sm">{day.week}</Text>
             </Center>

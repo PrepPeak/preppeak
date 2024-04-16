@@ -5,10 +5,7 @@ import { request } from "@/shared";
 export const getQuestions = (
   subjectId: string,
 ): Promise<AxiosResponse<QuestionsType>> => {
-  const url1 = `/subjects/<int:subject_id>/questions/`;
-  const url2 = "?subject_id=" + subjectId;
-
-  const url = url1 + url2;
+  const url = `/subjects/${subjectId}/questions/`;
 
   return request.get(url);
 };
