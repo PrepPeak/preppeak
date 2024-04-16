@@ -4,13 +4,13 @@ import { NavLinkType } from "@/widgets/layout/ui/drawer/types/nav-link-types.ts"
 export const useNavLinks = (): NavLinkType[] => {
   return [
     {
-      title: "Home",
+      title: "Список университетов",
       link: "/",
       icon: <FiHome />,
     },
     {
-      title: "About",
-      link: "/about",
+      title: "Дашборды",
+      link: "/dashboards",
       icon: <FiLink />,
     },
     {
