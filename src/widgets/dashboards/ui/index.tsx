@@ -33,7 +33,7 @@ export const Dashboards = () => {
               }
               color={
                 report?.streakWeekDay && report?.streakWeekDay >= day.id
-                  ? "gray.100"
+                  ? "gray.500"
                   : "gray.900"
               }
             >

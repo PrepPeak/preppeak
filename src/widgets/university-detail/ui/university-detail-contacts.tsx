@@ -18,7 +18,6 @@ export const UniversityDetailContacts = (props: Props) => {
       p="24px"
       borderRadius="12px"
       boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
-      mt="24px"
       w="fit-content"
     >
       <Text textStyle="xl" fontWeight="bold">

@@ -6,8 +6,6 @@ export const SubjectChoiceCard = () => {
   const navigate = useNavigate();
   const { subjects, isLoading } = useSubjects();
 
-  console.log(subjects);
-
   if (isLoading) return <Text>Загрузка...</Text>;
 
   return (

@@ -1,5 +1,5 @@
 import { useLeaderboard } from "@/widgets/leaderboard/store.ts";
-import { Box, Center, Divider, Stack, Text } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { LeaderboardUser } from "@/widgets/leaderboard/ui/leaderboard-user.tsx";
 
 export const Leaderboard = () => {

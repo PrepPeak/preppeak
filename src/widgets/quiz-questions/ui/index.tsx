@@ -6,7 +6,6 @@ import { useQuestions } from "@/widgets/quiz-questions/store";
 
 export const QuizQuestions = () => {
   const { subjectId } = useParams();
-  console.log(subjectId);
   const { questions, isLoading } = useQuestions(subjectId || "");
   const [activeQuestion, setActiveQuestion] = useState(0);
 

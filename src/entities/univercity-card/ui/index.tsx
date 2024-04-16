@@ -4,12 +4,14 @@ type Props = {
   name: string;
   logo: string;
   numberOfSpecialities: number;
+  onCardClick: () => void;
 };
 
 export const UniversityCardLayout = ({
   name,
   logo,
   numberOfSpecialities,
+  onCardClick,
 }: Props) => {
   return (
     <Flex
@@ -18,6 +20,7 @@ export const UniversityCardLayout = ({
       p="12px"
       borderRadius="12px"
       cursor="pointer"
+      onClick={onCardClick}
     >
       <Center w="100%" justifyContent="space-between" gap="12px">
         <Image src={logo} alt={name} w="50px" h="50px" />
