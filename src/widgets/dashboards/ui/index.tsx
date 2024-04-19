@@ -13,7 +13,7 @@ export const Dashboards = () => {
       <Box
         p="24px"
         borderRadius="12px"
-        boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
+        boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
         bgColor="white"
       >
         <Text textStyle="md" fontWeight="bold">

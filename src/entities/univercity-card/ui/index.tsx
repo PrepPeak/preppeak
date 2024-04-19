@@ -21,6 +21,7 @@ export const UniversityCardLayout = ({
       borderRadius="12px"
       cursor="pointer"
       onClick={onCardClick}
+      boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
     >
       <Center w="100%" justifyContent="space-between" gap="12px">
         <Image src={logo} alt={name} w="50px" h="50px" />

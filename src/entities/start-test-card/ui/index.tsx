@@ -11,7 +11,7 @@ export const StartTestCard = () => {
       p="18px"
       borderRadius="12px"
       mt="24px"
-      boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
+      boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
     >
       <Text fontSize="md" fontWeight="bold">
         Первый пробный тест

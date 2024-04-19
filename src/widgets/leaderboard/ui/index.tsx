@@ -13,7 +13,7 @@ export const Leaderboard = () => {
     <Stack
       mt="24px"
       bgColor="white"
-      boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
+      boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
       p="12px"
       borderRadius="12px"
       gap="12px"

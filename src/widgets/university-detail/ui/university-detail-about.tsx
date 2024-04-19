@@ -1,4 +1,4 @@
-import { Box, Text, Stack, Center } from "@chakra-ui/react";
+import { Box, Center, Stack, Text } from "@chakra-ui/react";
 import { PiMedalMilitary, PiMoney } from "react-icons/pi";
 import { GrStatusGood } from "react-icons/gr";
 import { BsHouse, BsPerson } from "react-icons/bs";
@@ -20,8 +20,7 @@ export const UniversityDetailAbout = (props: Props) => {
       bgColor="white"
       p="24px"
       borderRadius="12px"
-      boxShadow="0px 32px 64px -12px rgba(16, 24, 40, 0.14);"
-      mt="24px"
+      boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
       w="fit-content"
     >
       <Stack gap="6px" w="320px">
