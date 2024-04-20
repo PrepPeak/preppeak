@@ -1,5 +1,5 @@
 import { UniversityCard } from "../ui/university-card";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 import { useUniversityCards } from "@/widgets/univercity-cards";
 
 export const UniversityCards = () => {
@@ -8,10 +8,10 @@ export const UniversityCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Flex gap="20px" flexWrap="wrap" mt="32px">
+    <Grid gap="20px" flexWrap="wrap" mt="32px" templateColumns="repeat(3,1fr)">
       {universityCards.map((university) => (
-        <UniversityCard key={university.id} university={university} />
+        <UniversityCard university={university} key={university.id} />
       ))}
-    </Flex>
+    </Grid>
   );
 };

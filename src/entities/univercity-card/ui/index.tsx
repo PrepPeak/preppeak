@@ -22,8 +22,9 @@ export const UniversityCardLayout = ({
       cursor="pointer"
       onClick={onCardClick}
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
+      justifyContent="center"
     >
-      <Center w="100%" justifyContent="space-between" gap="12px">
+      <Center w="100%" justifyContent="flex-start" gap="12px">
         <Image src={logo} alt={name} w="50px" h="50px" />
         <Stack>
           <Text textStyle="md" textColor="gray.900" fontWeight="bold">
