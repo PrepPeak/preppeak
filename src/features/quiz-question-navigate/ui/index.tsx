@@ -6,16 +6,20 @@ type Props = {
   questionNum: number;
   activeQuestion: number;
   setActiveQuestion: Dispatch<number>;
+  isActiveTest: boolean;
 };
 export const QuizQuestionNavigate = (props: Props) => {
-  const { questionNum, activeQuestion, setActiveQuestion } = props;
+  const { questionNum, activeQuestion, setActiveQuestion, isActiveTest } =
+    props;
+
+  console.log(isActiveTest);
 
   return (
     <Center justifyContent="space-between" w="100%">
       <Text fontStyle="md" color="gray.500" fontWeight="bold">
         {activeQuestion + 1} из {questionNum}
       </Text>
-      <Timer hours={3} />
+      {isActiveTest && <Timer hours={3} />}
       <Center gap="12px">
         {[...Array(questionNum)]?.map((_, index) => (
           <Center

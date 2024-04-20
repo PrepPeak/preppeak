@@ -8,6 +8,7 @@ export const UniversitySpecialities = (speciality: Speciality) => {
       p="24px"
       borderRadius="12px"
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
+      h="fit-content"
     >
       <Text textStyle="md" fontWeight="semibold">
         {speciality?.name}

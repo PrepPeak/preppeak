@@ -12,7 +12,7 @@ export const SubjectQuizPage = () => {
           as="span"
           color="gray.500"
           cursor="pointer"
-          onClick={() => navigate("/subject-choose")}
+          onClick={() => navigate(-1)}
         >
           Выбор предметов
         </Text>{" "}

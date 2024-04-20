@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Box, Button, Center } from "@chakra-ui/react";
 import { QuizQuestion, QuizQuestionNavigate } from "@/features";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useQuestions } from "@/widgets/quiz-questions/store";
 
 export const QuizQuestions = () => {
   const { subjectId } = useParams();
-  const { questions, isLoading } = useQuestions(subjectId || "");
+  const [searchParams] = useSearchParams();
+  const { questions, isLoading } = useQuestions(
+    subjectId || "",
+    searchParams.get("test_id") || "",
+  );
   const [activeQuestion, setActiveQuestion] = useState(0);
 
   const navigate = useNavigate();
@@ -34,10 +38,12 @@ export const QuizQuestions = () => {
         questionNum={questions?.length}
         activeQuestion={activeQuestion}
         setActiveQuestion={setActiveQuestion}
+        isActiveTest={questions[activeQuestion]?.correctAnswerIds?.length === 0}
       />
       <QuizQuestion
         answers={questions[activeQuestion]?.answers}
         questionTitle={questions[activeQuestion]?.text}
+        correctAnswerIds={questions[activeQuestion]?.correctAnswerIds}
       />
       <Center
         w="100%"

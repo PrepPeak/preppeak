@@ -4,9 +4,15 @@ import { Outlet } from "react-router-dom";
 
 export function AppLayout() {
   return (
-    <Box w="100%">
+    <Box w="100%" overflowY="auto">
       <Drawer />
-      <Box ml="320px" p="8px 24px" bgColor="rgba(0, 0, 0, 0.01)" h="100vh">
+      <Box
+        ml="320px"
+        p="8px 24px"
+        bgColor="rgba(0, 0, 0, 0.01)"
+        h="100vh"
+        overflowY="auto"
+      >
         <Outlet />
       </Box>
     </Box>

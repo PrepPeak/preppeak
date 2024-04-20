@@ -1,9 +1,9 @@
 import {
+  Drawer as ChakraDrawer,
   DrawerBody,
   DrawerContent,
   DrawerHeader,
   useDisclosure,
-  Drawer as ChakraDrawer,
 } from "@chakra-ui/react";
 import { Logo } from "@/shared";
 import { useNavLinks } from "../hooks/useNavLinks";
@@ -19,6 +19,7 @@ export const Drawer = () => {
       isOpen={true}
       trapFocus={false}
       variant="alwaysOpen"
+      blockScrollOnMount={false}
     >
       <DrawerContent
         maxW="320px"

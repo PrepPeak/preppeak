@@ -14,7 +14,7 @@ export const StartTestCard = () => {
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
     >
       <Text fontSize="md" fontWeight="bold">
-        Первый пробный тест
+        Пройти Тест
       </Text>
       <Button colorScheme="blue" onClick={() => navigate("/subject-choose")}>
         Пройти
