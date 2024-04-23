@@ -24,10 +24,11 @@ export const TestCard = ({ test }: Props) => {
         {test.status === "FINISHED" ? "Завершен" : "Не завершен"}
       </Tag>
       <Button
-        colorScheme="blue"
+        colorScheme={test?.status === "FINISHED" ? "pink" : "blue"}
         onClick={() => navigate(`/subject-choose?test_id=${test.id}`)}
+        fontWeight="normal"
       >
-        Пройти
+        {test?.status === "FINISHED" ? "Проверить" : "Пройти"}
       </Button>
     </Center>
   );
