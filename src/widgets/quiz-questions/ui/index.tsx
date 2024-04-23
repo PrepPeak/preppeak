@@ -54,7 +54,7 @@ export const QuizQuestions = () => {
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
       p="24px"
       borderRadius="12px"
-      maxW="80%"
+      maxW={{ base: "100%", md: "80%" }}
       mt="24px"
     >
       <QuizQuestionNavigate
@@ -78,12 +78,10 @@ export const QuizQuestions = () => {
           colorScheme="blue"
           onClick={() => setActiveQuestion(activeQuestion - 1)}
         >
-          Предыдущий вопрос
+          Предыдущий
         </Button>
         <Button colorScheme="blue" onClick={onNextQuestion}>
-          {activeQuestion === questions?.length - 1
-            ? "Готово"
-            : "Следующий вопрос"}
+          {activeQuestion === questions?.length - 1 ? "Готово" : "Следующий"}
         </Button>
       </Center>
     </Box>

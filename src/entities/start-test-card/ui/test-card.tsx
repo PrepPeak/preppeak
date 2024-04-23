@@ -10,7 +10,7 @@ export const TestCard = ({ test }: Props) => {
   return (
     <Center
       justifyContent="space-between"
-      w="720px"
+      w={{ base: "100%", md: "720px" }}
       bgColor="white"
       p="18px"
       borderRadius="12px"
@@ -27,7 +27,7 @@ export const TestCard = ({ test }: Props) => {
         colorScheme="blue"
         onClick={() => navigate(`/subject-choose?test_id=${test.id}`)}
       >
-        {test.status === "FINISHED" ? "Работа над ошибками" : "Пройти"}
+        Пройти
       </Button>
     </Center>
   );

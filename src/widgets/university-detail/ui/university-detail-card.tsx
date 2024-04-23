@@ -17,7 +17,7 @@ export const UniversityDetailCard = (props: Props) => {
       p="24px"
       borderRadius="12px"
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
-      w="640px"
+      w={{ base: "100%", md: "640px" }}
     >
       <Center w="100%" justifyContent="flex-start" gap="24px">
         <Image src={logo} w="120px" h="120px" />

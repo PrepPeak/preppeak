@@ -14,11 +14,11 @@ export const SubjectCard = ({ subject }: Props) => {
       p="18px"
       borderRadius="12px"
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
-      w="200px"
+      w={{ base: "100%", md: "200px" }}
       h="200px"
     >
       <Text textStyle="md">{name}</Text>
-      <Box>
+      <Box w="100%">
         <Progress value={percentage} colorScheme="green" />
         <Text textStyle="md" color="gray.500" mt="12px">
           Охвачено вопросов

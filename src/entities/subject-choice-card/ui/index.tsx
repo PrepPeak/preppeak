@@ -22,7 +22,12 @@ export const SubjectChoiceCard = () => {
         <Text textStyle="md" fontWeight="semibold">
           Тест №{detailedTest?.id}
         </Text>
-        <Flex mt="24px" w="720px" flexDir="column" gap="12px">
+        <Flex
+          mt="24px"
+          w={{ base: "100%", md: "720px" }}
+          flexDir="column"
+          gap="12px"
+        >
           {detailedTest?.subjects.map((subject) => (
             <Center
               key={subject?.id}

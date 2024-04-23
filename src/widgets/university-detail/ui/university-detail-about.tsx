@@ -21,9 +21,9 @@ export const UniversityDetailAbout = (props: Props) => {
       p="24px"
       borderRadius="12px"
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
-      w="fit-content"
+      w={{ base: "100%", md: "fit-content" }}
     >
-      <Stack gap="6px" w="320px">
+      <Stack gap="6px" w={{ base: "100%", md: "320px" }}>
         <Center justifyContent="space-between" w="100%">
           <Center gap="6px">
             <PiMoney fill="#5755FF" />

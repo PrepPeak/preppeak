@@ -13,7 +13,9 @@ export const NavLink = ({ title, link, icon }: NavLinkType) => {
         borderRadius="12px"
       >
         {icon}
-        <Text textStyle="md">{title}</Text>
+        <Text textStyle="md" display={{ base: "none", md: "block" }}>
+          {title}
+        </Text>
       </Center>
     </Link>
   );

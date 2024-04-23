@@ -24,7 +24,7 @@ export const StartTestCard = () => {
   return (
     <Center
       justifyContent="space-between"
-      w="720px"
+      w={{ base: "100%", md: "720px" }}
       bgColor="white"
       p="18px"
       borderRadius="12px"

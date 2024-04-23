@@ -8,7 +8,12 @@ export const SubjectsList = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Center justifyContent="flex-start" gap="24px" flexWrap="wrap" mt="48px">
+    <Center
+      justifyContent="flex-start"
+      gap="24px"
+      flexWrap="wrap"
+      mt={{ base: "24px", md: "48px" }}
+    >
       {subjects.map((subject) => (
         <SubjectCard key={subject.id} subject={subject} />
       ))}

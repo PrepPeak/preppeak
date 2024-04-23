@@ -20,7 +20,7 @@ export const UniversityDetail = () => {
   if (isLoading || isSpecialitiesLoading) return <div>Loading...</div>;
 
   return (
-    <Box mt="24px" ml="24px">
+    <Box mt="24px" ml={{ md: "24px" }}>
       <Flex gap="24px" w="100%" flexWrap="wrap">
         <UniversityDetailCard {...data} />
         <UniversityDetailContacts {...data} />

@@ -1,4 +1,4 @@
-import { Box, Text, Stack, Center, Divider, Link } from "@chakra-ui/react";
+import { Box, Center, Divider, Link, Stack, Text } from "@chakra-ui/react";
 import { BiPhone } from "react-icons/bi";
 import { IoEarth } from "react-icons/io5";
 import { FiFacebook } from "react-icons/fi";
@@ -18,12 +18,12 @@ export const UniversityDetailContacts = (props: Props) => {
       p="24px"
       borderRadius="12px"
       boxShadow="0 0 2px rgba(21,29,36,.08),0 2px 4px rgba(21,29,36,.08)"
-      w="fit-content"
+      w={{ base: "100%", md: "fit-content" }}
     >
       <Text textStyle="xl" fontWeight="bold">
         Контакты
       </Text>
-      <Stack gap="6px" w="200px" mt="24px">
+      <Stack gap="6px" w={{ base: "100%", md: "200px" }} mt="24px">
         <Center justifyContent="flex-start" w="100%" gap="12px">
           <BiPhone />
           <Text color="gray.900" textStyle="md">

@@ -26,7 +26,12 @@ export const Timer = ({ hours }: Props) => {
   };
 
   return (
-    <Text fontStyle="xl" fontWeight="bold" color="gray.500">
+    <Text
+      fontStyle="xl"
+      fontWeight="bold"
+      color="gray.500"
+      display={{ base: "none", md: "block" }}
+    >
       {formatTime()}
     </Text>
   );
