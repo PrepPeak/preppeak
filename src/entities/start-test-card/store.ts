@@ -1,7 +1,10 @@
 import { request } from "@/shared";
 import { AxiosResponse } from "axios";
-import { useQuery } from "react-query";
-import { convertKeysToCamelCase } from "@/shared/heplers.ts";
+import { useMutation, useQuery } from "react-query";
+import {
+  convertKeysToCamelCase,
+  convertKeysToSnakeCase,
+} from "@/shared/heplers.ts";
 
 export type TestResponseRaw = {
   id: number;
@@ -60,7 +63,11 @@ export const postTest = (
 ): Promise<AxiosResponse<unknown>> => {
   const url = "/test/";
 
-  return request.post(url, data);
+  return request.post(url, convertKeysToSnakeCase(data));
+};
+
+export const useCreateTest = () => {
+  return useMutation((data: PostTestRequest) => postTest(data));
 };
 
 export const getTestById = (

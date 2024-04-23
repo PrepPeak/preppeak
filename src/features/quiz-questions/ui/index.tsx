@@ -1,6 +1,7 @@
-import { Box, Radio, RadioGroup, Text } from "@chakra-ui/react";
+import { Box, Center, Radio, RadioGroup, Text } from "@chakra-ui/react";
 import { AnswerType } from "@/widgets/quiz-questions/models";
 import { MathJax } from "better-react-mathjax";
+import { BiCheck } from "react-icons/bi";
 
 type Props = {
   questionTitle: string;
@@ -36,10 +37,19 @@ export const QuizQuestion = (props: Props) => {
           value={correctAnswerIds?.[0].toString()}
         >
           {answers.map((answer) => (
-            <Radio value={answer.id.toString()} key={answer.id}>
-              <MathJax inline dynamic>
-                {answer.text}
-              </MathJax>
+            <Radio
+              value={answer.id.toString()}
+              key={answer.id}
+              colorScheme="green"
+            >
+              <Center gap="12px">
+                <MathJax inline dynamic>
+                  {answer.text}
+                </MathJax>
+                {answer.id === correctAnswerIds?.[0] && (
+                  <BiCheck color="green" size="24px" />
+                )}
+              </Center>
             </Radio>
           ))}
         </RadioGroup>

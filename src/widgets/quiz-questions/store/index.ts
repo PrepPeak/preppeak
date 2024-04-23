@@ -1,5 +1,5 @@
-import { useQuery } from "react-query";
-import { getQuestions } from "@/widgets/quiz-questions/api";
+import { useMutation, useQuery } from "react-query";
+import { answerQuestion, getQuestions } from "@/widgets/quiz-questions/api";
 import { convertKeysToCamelCase } from "@/shared/heplers.ts";
 import {
   QuestionsType,
@@ -24,4 +24,15 @@ export const useQuestions = (subjectId: string, testId: string) => {
     isError,
     error,
   };
+};
+
+export type AnswerQuestionRequest = {
+  testId: string;
+  subjectId: string;
+  questionId: string;
+  answerId: string;
+};
+
+export const useAnswerQuestion = () => {
+  return useMutation((data: AnswerQuestionRequest) => answerQuestion(data));
 };

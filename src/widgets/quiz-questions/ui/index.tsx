@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Center } from "@chakra-ui/react";
+import { Box, Button, Center, useToast } from "@chakra-ui/react";
 import { QuizQuestion, QuizQuestionNavigate } from "@/features";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useQuestions } from "@/widgets/quiz-questions/store";
@@ -14,15 +14,38 @@ export const QuizQuestions = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
 
   const navigate = useNavigate();
+  const toast = useToast();
 
   if (isLoading) return <Box>Загрузка...</Box>;
 
   if (questions.length === 0) return <Box>Вопросов нет ;)</Box>;
 
   const onNextQuestion = () => {
+    // mutate(
+    //   {
+    //     subjectId: subjectId || "",
+    //     testId: searchParams.get("test_id") || "",
+    //     answerId: "1",
+    //     questionId: questions[activeQuestion]?.id.toString() || "",
+    //   },
+    //   {
+    //     onSuccess: () => {
+    //
+    //     },
+    //   },
+    // );
     if (activeQuestion !== questions?.length - 1)
       setActiveQuestion(activeQuestion + 1);
-    else navigate("/quiz");
+    else {
+      toast({
+        title: "Предмет пройден!",
+        description: "Выберите другие предметы чтобы их пройти",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      navigate(-1);
+    }
   };
 
   return (
