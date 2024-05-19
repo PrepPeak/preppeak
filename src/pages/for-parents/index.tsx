@@ -76,15 +76,6 @@ const ForParentsPage = () => {
     { date: "2024-05-25", count: 3 },
   ];
 
-  useEffect(() => {
-    // Clean up chart instance on component unmount
-    return () => {
-      if (chartRef.current && chartRef.current.chartInstance) {
-        chartRef.current.chartInstance.destroy();
-      }
-    };
-  }, []);
-
   return (
     <Box px="24px" py="16px">
       <Logo />
