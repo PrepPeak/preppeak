@@ -13,6 +13,7 @@ const SubjectQuizPage = lazy(() => import("@/pages/subject-quiz/ui"));
 const UniversityDetailPage = lazy(() => import("@/pages/university-detail"));
 const DashboardsPage = lazy(() => import("@/pages/dashboards/"));
 const LeaderboardPage = lazy(() => import("@/pages/leaderboard/"));
+const ForParentsPage = lazy(() => import("@/pages/for-parents/"));
 
 type Props = {
   children: ReactNode;
@@ -72,4 +73,5 @@ export const router = createBrowserRouter([
       { path: "/leaderboard", element: <LeaderboardPage /> },
     ],
   },
+  { path: "/for-parents", element: <ForParentsPage /> },
 ]);
