@@ -3,7 +3,7 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import { AppLayout } from "@/widgets";
 
 const SignInPage = lazy(() => import("@/pages/sign-in/ui"));
-const HomePage = lazy(() => import("@/pages/home/ui"));
+const UniversityList = lazy(() => import("@/pages/university-list/ui"));
 const QuizPage = lazy(() => import("@/pages/quiz/ui"));
 const RegisterPage = lazy(() => import("@/pages/register/ui"));
 const SubjectChoicePagePage = lazy(
@@ -14,6 +14,8 @@ const UniversityDetailPage = lazy(() => import("@/pages/university-detail"));
 const DashboardsPage = lazy(() => import("@/pages/dashboards/"));
 const LeaderboardPage = lazy(() => import("@/pages/leaderboard/"));
 const ForParentsPage = lazy(() => import("@/pages/for-parents/"));
+const HomePage = lazy(() => import("@/pages/home/"));
+const ChancesPage = lazy(() => import("@/pages/chances/"));
 
 type Props = {
   children: ReactNode;
@@ -59,6 +61,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/university-list", element: <UniversityList /> },
       {
         path: "/quiz",
         element: <QuizPage />,
@@ -69,6 +72,7 @@ export const router = createBrowserRouter([
       },
       { path: "/subject-choose", element: <SubjectChoicePagePage /> },
       { path: "/university/:id", element: <UniversityDetailPage /> },
+      { path: "/chances", element: <ChancesPage /> },
       { path: "/dashboards", element: <DashboardsPage /> },
       { path: "/leaderboard", element: <LeaderboardPage /> },
     ],
