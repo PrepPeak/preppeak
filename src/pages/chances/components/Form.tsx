@@ -28,7 +28,7 @@ export const ChancesForm = () => {
   const [secondSpec, setSecondSpec] = useState("Вторая специальность");
   const [thirdSpec, setThirdSpec] = useState("Третья специальность");
   const [fourthSpec, setFourthSpec] = useState("Четвертая специальность");
-  const [sliderValue, setSliderValue] = useState(50);
+  const [sliderValue, setSliderValue] = useState(70);
   const [specArr, setSpecArr] = useState<number[]>([]);
 
   const { data: specialities } = useQuery("specialities", () =>
