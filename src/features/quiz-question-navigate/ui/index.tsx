@@ -20,7 +20,7 @@ export const QuizQuestionNavigate = (props: Props) => {
         {activeQuestion + 1} из {questionNum}
       </Text>
       {isActiveTest && <Timer hours={3} />}
-      <Center gap="12px">
+      <Center gap="12px" overflowX="scroll" maxW="600px" w="100%">
         {[...Array(questionNum)]?.map((_, index) => (
           <Center
             key={index}
@@ -31,7 +31,7 @@ export const QuizQuestionNavigate = (props: Props) => {
             borderColor="blue.500"
             cursor="pointer"
             onClick={() => setActiveQuestion(index)}
-            w="40px"
+            minW="40px"
             h="40px"
           >
             {index + 1}
