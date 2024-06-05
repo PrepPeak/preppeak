@@ -1,4 +1,4 @@
-import { Center, Text } from "@chakra-ui/react";
+import { Box, Center, Text } from "@chakra-ui/react";
 import { Dispatch } from "react";
 import { Timer } from "@/entities";
 
@@ -15,12 +15,20 @@ export const QuizQuestionNavigate = (props: Props) => {
   console.log(isActiveTest);
 
   return (
-    <Center justifyContent="space-between" w="100%">
-      <Text fontStyle="md" color="gray.500" fontWeight="bold">
-        {activeQuestion + 1} из {questionNum}
-      </Text>
-      {isActiveTest && <Timer hours={3} />}
-      <Center gap="12px" overflowX="scroll" maxW="600px" w="100%">
+    <Box>
+      <Center justifyContent="space-between" w="100%">
+        <Text fontStyle="md" color="gray.500" fontWeight="bold">
+          {activeQuestion + 1} из {questionNum}
+        </Text>
+        {isActiveTest && <Timer hours={3} />}
+      </Center>
+      <Center
+        mt="12px"
+        gap="12px"
+        overflowX="scroll"
+        w="100%"
+        justifyContent="flex-start"
+      >
         {[...Array(questionNum)]?.map((_, index) => (
           <Center
             key={index}
@@ -38,6 +46,6 @@ export const QuizQuestionNavigate = (props: Props) => {
           </Center>
         ))}
       </Center>
-    </Center>
+    </Box>
   );
 };

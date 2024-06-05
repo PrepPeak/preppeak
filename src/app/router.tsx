@@ -16,6 +16,7 @@ const LeaderboardPage = lazy(() => import("@/pages/leaderboard/"));
 const ForParentsPage = lazy(() => import("@/pages/for-parents/"));
 const HomePage = lazy(() => import("@/pages/home/"));
 const ChancesPage = lazy(() => import("@/pages/chances/"));
+const Profile = lazy(() => import("@/pages/profile/"));
 
 type Props = {
   children: ReactNode;
@@ -75,6 +76,7 @@ export const router = createBrowserRouter([
       { path: "/chances", element: <ChancesPage /> },
       { path: "/dashboards", element: <DashboardsPage /> },
       { path: "/leaderboard", element: <LeaderboardPage /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
   { path: "/for-parents", element: <ForParentsPage /> },
