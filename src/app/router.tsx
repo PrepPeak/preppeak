@@ -52,6 +52,7 @@ const ProtectedRoute = ({ children }: Props) => {
 
 export const router = createBrowserRouter([
   { path: "/sign-in", element: <SignInPage /> },
+  { path: "/home", element: <HomePage /> },
   { path: "/register", element: <RegisterPage /> },
   {
     path: "/",
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/", element: <UniversityList /> },
       { path: "/university-list", element: <UniversityList /> },
       {
         path: "/quiz",

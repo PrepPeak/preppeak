@@ -10,13 +10,8 @@ export const useNavLinks = (): NavLinkType[] => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   return [
     {
-      title: "Главная",
-      link: "/",
-      icon: <FiHome size={isMobile ? "24px" : "16px"} />,
-    },
-    {
       title: "Список университетов",
-      link: "/university-list",
+      link: "/",
       icon: <AiFillBank size={isMobile ? "24px" : "16px"} />,
     },
     {

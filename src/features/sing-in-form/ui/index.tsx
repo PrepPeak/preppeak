@@ -28,7 +28,7 @@ export const SignInForm = () => {
     mutate(data, {
       onSuccess: (data) => {
         localStorage.setItem("token", data.data.access_token);
-        navigate("/");
+        navigate("/university-list");
       },
     });
   };
