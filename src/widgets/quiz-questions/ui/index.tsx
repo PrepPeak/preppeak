@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Box, Button, Center, useToast } from "@chakra-ui/react";
 import { QuizQuestion, QuizQuestionNavigate } from "@/features";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { useQuestions } from "@/widgets/quiz-questions/store";
+import {
+  useAnswerQuestion,
+  useQuestions,
+} from "@/widgets/quiz-questions/store";
 
 export const QuizQuestions = () => {
   const { subjectId } = useParams();
@@ -12,6 +15,8 @@ export const QuizQuestions = () => {
     searchParams.get("test_id") || "",
   );
   const [activeQuestion, setActiveQuestion] = useState(0);
+  const { mutate } = useAnswerQuestion();
+  const [activeAnswer, setActiveAnswer] = useState<string>("");
 
   const navigate = useNavigate();
   const toast = useToast();
@@ -21,30 +26,44 @@ export const QuizQuestions = () => {
   if (questions.length === 0) return <Box>Вопросов нет ;)</Box>;
 
   const onNextQuestion = () => {
-    // mutate(
-    //   {
-    //     subjectId: subjectId || "",
-    //     testId: searchParams.get("test_id") || "",
-    //     answerId: "1",
-    //     questionId: questions[activeQuestion]?.id.toString() || "",
-    //   },
-    //   {
-    //     onSuccess: () => {
-    //
-    //     },
-    //   },
-    // );
-    if (activeQuestion !== questions?.length - 1)
+    if (questions[activeQuestion]?.correctAnswerIds?.length > 0) {
       setActiveQuestion(activeQuestion + 1);
-    else {
+      return;
+    }
+    if (activeAnswer !== "") {
+      if (activeQuestion !== questions?.length - 1) {
+        mutate(
+          {
+            subjectId: subjectId || "",
+            testId: searchParams.get("test_id") || "",
+            answerId: activeAnswer,
+            questionId: questions[activeQuestion]?.id.toString() || "",
+          },
+          {
+            onSuccess: () => {
+              setActiveQuestion(activeQuestion + 1);
+              setActiveAnswer("");
+            },
+          },
+        );
+      } else {
+        toast({
+          title: "Предмет пройден!",
+          description: "Выберите другие предметы чтобы их пройти",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        navigate(-1);
+      }
+    } else {
       toast({
-        title: "Предмет пройден!",
-        description: "Выберите другие предметы чтобы их пройти",
-        status: "success",
+        title: "Ответьте на вопрос",
+        description: "Выберите ответ",
+        status: "error",
         duration: 9000,
         isClosable: true,
       });
-      navigate(-1);
     }
   };
 
@@ -67,6 +86,8 @@ export const QuizQuestions = () => {
         answers={questions[activeQuestion]?.answers}
         questionTitle={questions[activeQuestion]?.text}
         correctAnswerIds={questions[activeQuestion]?.correctAnswerIds}
+        setActiveAnswer={setActiveAnswer}
+        userAnswerId={questions[activeQuestion]?.userAnswerIds?.[0]?.toString()}
       />
       <Center
         w="100%"

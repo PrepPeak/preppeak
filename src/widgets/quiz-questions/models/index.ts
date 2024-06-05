@@ -8,6 +8,7 @@ export type QuestionTypeRaw = {
   text: string;
   answers: AnswerType[];
   correct_answer_ids: number[];
+  user_answer_ids: number[];
 };
 
 export type QuestionType = {
@@ -15,6 +16,7 @@ export type QuestionType = {
   text: string;
   answers: AnswerType[];
   correctAnswerIds: number[];
+  userAnswerIds: number[];
 };
 
 export type QuestionsTypeRaw = {

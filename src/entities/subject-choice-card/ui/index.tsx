@@ -4,14 +4,23 @@ import {
   useDetailedTest,
   useSubjects,
 } from "@/entities/subject-choice-card/store";
+import { useMutation, useQueryClient } from "react-query";
+import { request } from "@/shared";
 
 export const SubjectChoiceCard = () => {
   const navigate = useNavigate();
   const { subjects, isLoading } = useSubjects();
   const [searchParams] = useSearchParams();
+  const testId = searchParams.get("test_id");
 
   const { detailedTest, isLoading: isDetailedLoading } = useDetailedTest(
-    searchParams.get("test_id") || "",
+    testId || "",
+  );
+
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation(() =>
+    request.patch(`/test/${testId}/complete/`),
   );
 
   if (isLoading || isDetailedLoading) return <Text>Загрузка...</Text>;
@@ -54,6 +63,22 @@ export const SubjectChoiceCard = () => {
               </Button>
             </Center>
           ))}
+          <Center justifyContent="flex-end">
+            <Button
+              w="fit-content"
+              colorScheme="pink"
+              onClick={() =>
+                mutate(undefined, {
+                  onSuccess: () => {
+                    navigate("/quiz");
+                    queryClient.invalidateQueries("tests");
+                  },
+                })
+              }
+            >
+              Завершить тест
+            </Button>
+          </Center>
         </Flex>
       </>
     );

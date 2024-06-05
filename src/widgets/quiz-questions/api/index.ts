@@ -13,8 +13,8 @@ export const getQuestions = (
 };
 
 export const answerQuestion = (data: AnswerQuestionRequest) => {
-  const { testId, subjectId, questionId } = data;
-  const url = `/test/${testId}/subjects/${subjectId}/questions/${questionId}/answer/`;
+  const { testId, subjectId, questionId, answerId } = data;
+  const url = `/test/${testId}/subjects/${subjectId}/questions/${questionId}/answer`;
 
-  return request.post(url, { answerId: 1 });
+  return request.post(url, { answer_ids: [answerId] });
 };
