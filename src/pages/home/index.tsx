@@ -1,7 +1,6 @@
 import { Box, Button, Center, Text } from "@chakra-ui/react";
 import { Logo } from "@/shared";
 import { useNavigate } from "react-router-dom";
-import { BiLeftArrow } from "react-icons/bi";
 import { AiOutlineRight } from "react-icons/ai";
 import { HomePageIcon } from "@/pages/chances/HomePage.tsx";
 

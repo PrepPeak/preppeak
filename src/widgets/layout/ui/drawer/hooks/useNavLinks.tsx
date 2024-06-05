@@ -1,10 +1,9 @@
-import { FiAirplay, FiHome, FiLink } from "react-icons/fi";
+import { FiAirplay, FiLink } from "react-icons/fi";
 import { NavLinkType } from "@/widgets/layout/ui/drawer/types/nav-link-types.ts";
 import { BsFileBarGraph, BsPerson } from "react-icons/bs";
 import { useBreakpointValue } from "@chakra-ui/react";
 import { AiFillBank } from "react-icons/ai";
 import { IoDice } from "react-icons/io5";
-import { CiSettings } from "react-icons/ci";
 
 export const useNavLinks = (): NavLinkType[] => {
   const isMobile = useBreakpointValue({ base: true, md: false });
